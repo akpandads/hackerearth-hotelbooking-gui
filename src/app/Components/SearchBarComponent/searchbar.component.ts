@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HotelService} from '../../Services/HotelService/hotel.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-searchbar',
@@ -9,19 +10,20 @@ import {HotelService} from '../../Services/HotelService/hotel.service';
 export class SearchbarComponent implements OnInit {
 
   hotelNameInput: String;
-  hotelService: HotelService;
-  constructor() {
+  hotel : Observable<HotelModel[]>
+  constructor(private hotelService:HotelService) {
     this.hotelNameInput = '';
-    this.hotelService = new HotelService();
   }
 
   ngOnInit() {
   }
   public seacrhHotelByName() {
-    console.log('Inside Method' + this.hotelNameInput);
-    console.log(this.hotelService.searchHotelByName(this.hotelNameInput));
-
+    console.log('Inside search method : ' + this.hotelNameInput);
+    this.hotel=this.hotelService.searchHotelByName(this.hotelNameInput);
+    console.log('hotel value :'+this.hotel);
   }
+
+
   public getAllHotels() {
     console.log('inside get All Hotels');
   }

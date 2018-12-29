@@ -4,6 +4,9 @@ import { AppComponent } from './app.component';
 import { SearchbarComponent } from './Components/SearchBarComponent/searchbar.component';
 import { HeaderComponent } from './Components/HeaderComponent/header.component';
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {HttpParams} from "@angular/common/http";
+import {HotelService} from './Services/HotelService/hotel.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +15,9 @@ import {FormsModule} from '@angular/forms';
     HeaderComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [HotelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
