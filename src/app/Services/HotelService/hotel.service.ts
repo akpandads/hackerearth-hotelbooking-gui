@@ -7,16 +7,22 @@ import { map } from 'rxjs/operators';
 const hotelServiceUrl = environment.hotelEndPointUrl;
 @Injectable()
 export class HotelService {
-  findByNameUrl: string;
+  searchByNameUrl: string;
+  searchAllUrl: string;
 
   constructor(public http: HttpClient) {
-    this.findByNameUrl=hotelServiceUrl+"/hotels";
+    this.searchAllUrl=hotelServiceUrl+"/hotels";
+    this.searchByNameUrl = hotelServiceUrl + "/hotel/";
   }
 
   public searchHotelByName(hotelName: String) {
     console.log("calling service method");
-    return this.http.get<HotelModel[]>(this.findByNameUrl);
+    return this.http.get<HotelModel[]>(this.searchByNameUrl+hotelName);
+  }
 
+  public searchAllHotels(){
+    console.log("Inside search All Hotels method");
+    return this.http.get<HotelModel[]>(this.searchAllUrl);
   }
 
 }

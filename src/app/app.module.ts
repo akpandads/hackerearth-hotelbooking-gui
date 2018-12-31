@@ -7,12 +7,14 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {HttpParams} from "@angular/common/http";
 import {HotelService} from './Services/HotelService/hotel.service';
+import { SearchResultComponent } from './Components/SearchResultComponent/search-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule

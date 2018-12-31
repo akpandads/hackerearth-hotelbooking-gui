@@ -6,7 +6,7 @@ class HotelModel {
   country: String;
   latitude: Number;
   longitude: Number;
-  name: String;
+  hotelName: String;
   pincode: Number;
   province: String;
   rating: Number;
@@ -22,7 +22,7 @@ class HotelModel {
     this.country = country;
     this.latitude = latitude;
     this.longitude = longitude;
-    this.name = name;
+    this.hotelName = name;
     this.pincode = pincode;
     this.province = province
     this.rating = rating;
