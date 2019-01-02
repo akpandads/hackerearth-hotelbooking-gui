@@ -5,3 +5,8 @@
     <button class="btnsearch btn btn-dark" (click)="searchAllHotels()">See All Hotels</button>
   </div>
 </div>
+<div class="searchResult" *ngIf="displayHotel">
+  <div *ngFor="let hotel of hotels">
+    {{hotel.hotelName}}
+  </div>
+</div>
